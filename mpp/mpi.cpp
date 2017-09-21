@@ -480,7 +480,7 @@ MPP_RET mpp_init(MppCtx ctx, MppCtxType type, MppCodingType coding)
         p->type     = type;
         p->coding   = coding;
     } while (0);
-
+    mpp_log("mpi mpp_init %d\n", ret);
     get_mpi_debug();
     mpi_dbg_func("leave ret %d\n", ret);
     return ret;
