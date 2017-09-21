@@ -886,6 +886,7 @@ int mpi_enc_test(MpiEncTestCmd *cmd)
     mpp_log("mpi_enc_test start\n");
 
     ret = test_ctx_init(&p, cmd);
+    mpp_log("mpi_enc_test start %d\n", ret);
     if (ret) {
         mpp_err_f("test data init failed ret %d\n", ret);
         goto MPP_TEST_OUT;
