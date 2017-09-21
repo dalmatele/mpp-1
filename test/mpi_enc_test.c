@@ -484,12 +484,14 @@ MPP_RET test_mpp_init(MpiEncTestData *p)
         return MPP_ERR_NULL_PTR;
 
     ret = mpp_create(&p->ctx, &p->mpi);
+    mpp_log("mpi_enc_test finish mpp create %d\n", ret);
     if (ret) {
         mpp_err("mpp_create failed ret %d\n", ret);
         goto RET;
     }
 
     ret = mpp_init(p->ctx, MPP_CTX_ENC, p->type);
+    mpp_log("mpi_enc_test finish mpp init %d\n", ret);
     if (ret)
         mpp_err("mpp_init failed ret %d\n", ret);
 
