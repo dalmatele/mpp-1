@@ -886,13 +886,14 @@ int mpi_enc_test(MpiEncTestCmd *cmd)
     mpp_log("mpi_enc_test start\n");
 
     ret = test_ctx_init(&p, cmd);
-    mpp_log("mpi_enc_test start %d\n", ret);
+    mpp_log("mpi_enc_test finish ctx init %d\n", ret);
     if (ret) {
         mpp_err_f("test data init failed ret %d\n", ret);
         goto MPP_TEST_OUT;
     }
 
     ret = test_res_init(p);
+    mpp_log("mpi_enc_test finish res init %d\n", ret);
     if (ret) {
         mpp_err_f("test resource init failed ret %d\n", ret);
         goto MPP_TEST_OUT;
@@ -903,18 +904,21 @@ int mpi_enc_test(MpiEncTestCmd *cmd)
 
     // encoder demo
     ret = test_mpp_init(p);
+    mpp_log("mpi_enc_test finish mpp init %d\n", ret);
     if (ret) {
         mpp_err_f("test mpp init failed ret %d\n", ret);
         goto MPP_TEST_OUT;
     }
 
     ret = test_mpp_setup(p);
+    mpp_log("mpi_enc_test finish mpp setup %d\n", ret);
     if (ret) {
         mpp_err_f("test mpp setup failed ret %d\n", ret);
         goto MPP_TEST_OUT;
     }
 
     ret = test_mpp_preprare(p);
+    mpp_log("mpi_enc_test finish mpp prepare %d\n", ret);
     if (ret) {
         mpp_err_f("test mpp prepare failed ret %d\n", ret);
         goto MPP_TEST_OUT;
